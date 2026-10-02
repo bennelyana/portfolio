@@ -16,9 +16,9 @@ export default function Home() {
             <div className="hero-copy">
             <p className="hero-name">Mary Iana Bennel Buisan</p>
             <h1 className="statement">
-              <span className="statement-line"><span className="line-number" aria-hidden="true">01</span>Hello, I&apos;m <em>Yana!</em></span>
-              <span className="statement-line"><span className="line-number" aria-hidden="true">02</span>I create <span className="inline-symbol" aria-hidden="true">&#10035;</span> &amp; build</span>
-              <span className="statement-line"><span className="line-number" aria-hidden="true">03</span>digital <em>experiences.</em></span>
+              <span className="statement-line">Hello, I&apos;m <em>Yana!</em></span>
+              <span className="statement-line">I create <span className="inline-symbol" aria-hidden="true">&#10035;</span> &amp; build</span>
+              <span className="statement-line">digital <em>experiences.</em></span>
             </h1>
             <div className="hero-bottom"><p>Technology, creativity, and a little curiosity.<br />Thoughtful solutions for everyday life.</p><a className="round-link" href="#projects">Explore my work</a></div>
             </div>
@@ -141,9 +141,17 @@ export default function Home() {
 
         <section className="section experience" id="experience">
           <div className="section-inner">
-            <p className="section-eyebrow">My journey</p>
-            <h2 className="section-title">Work &amp; <em>education.</em></h2>
+            <h2 className="section-title">Education and <em>Work.</em></h2>
             <div className="resume-grid">
+              <div>
+                <h3 className="resume-heading">College education</h3>
+                <article className="education-card">
+                  <p className="section-eyebrow">2021 - 2025</p>
+                  <h4>Bachelor of Science in Information Technology</h4>
+                  <p>University of Mindanao</p>
+                  <span className="education-status">College graduate</span>
+                </article>
+              </div>
               <div>
                 <h3 className="resume-heading">Work experience</h3>
                 <ol className="experience-list">
@@ -155,15 +163,6 @@ export default function Home() {
                     </li>
                   ))}
                 </ol>
-              </div>
-              <div>
-                <h3 className="resume-heading">College education</h3>
-                <article className="education-card">
-                  <p className="section-eyebrow">2021 - 2025</p>
-                  <h4>Bachelor of Science in Information Technology</h4>
-                  <p>University of Mindanao</p>
-                  <span className="education-status">College graduate</span>
-                </article>
               </div>
             </div>
           </div>

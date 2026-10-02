@@ -199,6 +199,9 @@ body .credential-grid { gap: 22px; margin-top: 28px; }
 @media (max-width: 900px) {
   body .about-intro { grid-template-columns: 1fr; gap: 24px; }
 }
+body .experience .section-title { text-align: center; }
+body .resume-grid { grid-template-columns: .85fr 1.15fr; gap: 48px; }
+@media (max-width: 900px) { body .resume-grid { grid-template-columns: 1fr; gap: 32px; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }

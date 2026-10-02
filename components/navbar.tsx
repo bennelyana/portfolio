@@ -8,12 +8,11 @@ export default function Navbar() {
 
         <nav className="nav-links portfolio-nav" aria-label="Main navigation">
           {[
-            ["projects", "Projects"], ["about", "About me"], ["expertise", "Expertise"],
-            ["experience", "Experience"], ["contact", "Work with me"],
-          ].map(([id, label], index) => (
+            ["projects", "Explore my work"], ["about", "About me"], ["expertise", "Expertise"],
+            ["experience", "Education & work"], ["contact", "Work with me"],
+          ].map(([id, label]) => (
             <a href={`#${id}`} key={id}>
-              <span className="nav-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-              <span><span className="nav-slashes" aria-hidden="true">{"// "}</span>{label}</span>
+              <span>{label}</span>
             </a>
           ))}
         </nav>
