@@ -27,9 +27,6 @@ export default function Home() {
             <p className="hero-photo-caption">IT professional &amp; educator<br /><span>Based in the Philippines</span></p>
             </div>
             </div>
-            <div className="hero-previews" aria-label="A preview of my projects">
-              {[projects[0], projects[4], projects[1]].map((project, index) => <a href={`#project-${projects.indexOf(project) + 1}`} className="hero-preview" key={project.title}><div className="preview-image"><Image src={`/projects/${project.images[0]}.png`} alt={project.title} width={930} height={447} sizes="(max-width: 600px) 90vw, 30vw" /></div><span className="preview-category">{project.category}</span><span className="preview-title"><span>{project.title}</span><span className="preview-index">0{index + 1}</span></span></a>)}
-            </div>
           </div>
         </section>
 
