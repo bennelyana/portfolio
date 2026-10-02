@@ -43,7 +43,6 @@ export default function Home() {
 
         <section className="section" id="projects">
           <div className="section-inner">
-            <p className="section-eyebrow">Selected work &middot; 05 projects</p>
             <h2 className="section-title">A few things<br />I&apos;ve <em>built.</em></h2>
             <p className="section-description">A collection of my web, mobile, and desktop projects, built around everyday needs in healthcare, business, and personal productivity.</p>
             <div className="projects-grid">
@@ -56,18 +55,21 @@ export default function Home() {
                   <div className="project-gallery">
                     {project.images.map((image, imageIndex) => (
                       <a key={image} href={`/projects/${image}.png`} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} screenshot ${imageIndex + 1} (opens in a new tab)`}>
-                        <Image src={`/projects/${image}.png`} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"}`} fill sizes="(max-width: 900px) 90vw, 550px" />
+                        <Image src={`/projects/${image}.png`} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"}`} fill sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />
                       </a>
                     ))}
                   </div>
                   <div className="project-content">
                     <span className="project-category">{project.category}</span>
                     <h3 className="project-title">{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
-                    <a className="project-link" href={`/projects/${project.images[0]}.png`} target="_blank" rel="noopener noreferrer">Explore project<span className="sr-only"> (opens in a new tab)</span></a>
+                    <details className="project-details">
+                      <summary>About this project</summary>
+                      <p className="project-description">{project.description}</p>
                     <ul className="project-highlights" aria-label="Project features">
                       {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
                     </ul>
+                    </details>
+                    <a className="project-link" href={`/projects/${project.images[0]}.png`} target="_blank" rel="noopener noreferrer">View screenshots<span className="sr-only"> (opens in a new tab)</span></a>
                   </div>
                 </article>
               ))}
