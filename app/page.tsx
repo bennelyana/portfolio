@@ -2,6 +2,7 @@ import Image from "next/image";
 import { projects, certificates } from "../data/showcase";
 import { technologies, technicalSkills, experience } from "../data/resume";
 import Navbar from "../components/navbar";
+import ContactForm from "../components/contact-form";
 
 export default function Home() {
   return (
@@ -217,17 +218,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <address className="contact-details">
-                <a href="mailto:marybuisan65@gmail.com" className="contact-detail">
-                  <span className="contact-label">Email me</span>
-                  <span>marybuisan65@gmail.com</span>
-                </a>
-                <a href="tel:+639161138339" className="contact-detail">
-                  <span className="contact-label">Call me</span>
-                  <span>0916 113 8339</span>
-                </a>
-                <a href="mailto:marybuisan65@gmail.com" className="button contact-submit">Let&apos;s get in touch &rarr;</a>
-              </address>
+              <ContactForm />
 
             </div>
 

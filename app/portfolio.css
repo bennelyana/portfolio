@@ -296,6 +296,31 @@ html[data-theme="dark"] body .hero-portrait-frame { border-color: #43333c; }
   .career-period { grid-column: 2; padding: 0; }
   .career-copy h4 { font-size: 14px; }
 }
+body .theme-toggle { width: 44px; height: 44px; flex-shrink: 0; padding: 0; font-size: 23px; line-height: 1; }
+body .certificates { padding-top: 44px; padding-bottom: 44px; }
+body .credential-grid { width: 100%; max-width: none; margin-top: 24px; gap: 20px; }
+body .contact-box { align-items: center; grid-template-columns: .9fr 1.1fr; gap: 48px; padding: 40px; background: var(--white); }
+.contact-form-panel { min-width: 0; }
+body .contact-form { gap: 12px; }
+body .contact-input { padding: 17px 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--cream); color: var(--dark); font-size: 15px; }
+body .contact-input::placeholder { color: var(--gray); opacity: 1; }
+body .contact-input:focus-visible { outline: 2px solid var(--pink-dark); outline-offset: 2px; }
+body .contact-input.textarea { min-height: 140px; resize: vertical; }
+.contact-send { width: 100%; gap: 10px; min-height: 50px; border: 0; background: var(--pink-dark); color: var(--white); cursor: pointer; }
+.contact-send:hover { background: var(--brown); }
+.contact-send:focus-visible { outline: 3px solid var(--pink-dark); outline-offset: 4px; }
+.contact-form-note { margin-top: 8px; text-align: center; color: var(--gray); font-size: 11px; }
+.contact-direct { margin-top: 20px; text-align: center; color: var(--gray); font-size: 13px; overflow-wrap: anywhere; }
+.contact-direct a { color: var(--brown); }
+.contact-direct a:hover { color: var(--pink-dark); text-decoration: underline; }
+.contact-github { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin: 16px auto 0; color: var(--gray); border-radius: 50%; }
+.contact-github:hover { background: var(--pink-light); color: var(--pink-dark); }
+html[data-theme="dark"] .contact-send { color: #21151c; }
+@media (max-width: 900px) { body .contact-box { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 600px) {
+  body .contact-box { padding: 24px 18px; }
+  body .credential-grid { grid-template-columns: 1fr; max-width: 360px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }

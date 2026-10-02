@@ -15,5 +15,5 @@ export default function ThemeToggle() {
     try { localStorage.setItem("portfolio-theme", theme); } catch {}
   }
 
-  return <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label="Toggle dark mode"><span className="theme-dark-label">☾ Dark</span><span className="theme-light-label">☀ Light</span></button>;
+  return <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label="Toggle dark mode" title="Switch light or dark mode"><span className="theme-dark-label" aria-hidden="true">☾</span><span className="theme-light-label" aria-hidden="true">☀</span></button>;
 }
