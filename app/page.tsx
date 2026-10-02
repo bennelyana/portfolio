@@ -228,7 +228,6 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <a className="footer-wordmark" href="#home">YANA<span>.</span></a>
         <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p><div className="footer-socials"><a href="https://github.com/bennelyana" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:marybuisan65@gmail.com">Email</a><a href="#home">Back to top &uarr;</a></div></div>
       </footer>
     </>
