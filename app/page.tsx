@@ -13,14 +13,17 @@ export default function Home() {
         <section className="hero" id="home">
           <div className="hero-inner">
             <div className="hero-topline"><span>Mary Iana Bennel B. Buisan</span><span>IT professional &amp; educator / Philippines</span></div>
+            <div className="hero-intro">
             <h1 className="statement">
-              <span className="statement-line"><span className="line-number" aria-hidden="true">01</span>Hello, I&apos;m <em>Yana!</em><span className="portrait-stamp"><Image src="/images/profile.jpg" alt="Mary Iana Bennel Buisan" fill sizes="90px" priority /></span></span>
+              <span className="statement-line"><span className="line-number" aria-hidden="true">01</span>Hello, I&apos;m <em>Yana!</em></span>
               <span className="statement-line"><span className="line-number" aria-hidden="true">02</span>I create <span className="inline-symbol" aria-hidden="true">&#10035;</span> &amp; build</span>
               <span className="statement-line"><span className="line-number" aria-hidden="true">03</span>digital <em>experiences.</em></span>
             </h1>
-            <div className="hero-bottom"><p>Technology, creativity, and a little curiosity.<br />Thoughtful solutions for everyday life.</p><a className="round-link" href="#projects">Explore my work <span aria-hidden="true">&nearr;</span></a></div>
+            <div className="hero-portrait"><Image src="/images/profile.jpg" alt="Mary Iana Bennel Buisan" fill sizes="(max-width: 900px) 280px, 22vw" loading="eager" /></div>
+            </div>
+            <div className="hero-bottom"><p>Technology, creativity, and a little curiosity.<br />Thoughtful solutions for everyday life.</p><a className="round-link" href="#projects">Explore my work</a></div>
             <div className="hero-previews" aria-label="A preview of my projects">
-              {[projects[0], projects[4], projects[1]].map((project) => <a href="#projects" className="hero-preview" key={project.title}><Image src={`/projects/${project.images[0]}.png`} alt={project.title} width={930} height={447} sizes="(max-width: 600px) 70vw, 30vw" /><span>{project.title}<span aria-hidden="true">&nearr;</span></span></a>)}
+              {[projects[0], projects[4], projects[1]].map((project) => <a href="#projects" className="hero-preview" key={project.title}><Image src={`/projects/${project.images[0]}.png`} alt={project.title} width={930} height={447} sizes="(max-width: 600px) 70vw, 30vw" /><span>{project.title}</span></a>)}
             </div>
           </div>
         </section>
@@ -59,7 +62,7 @@ export default function Home() {
                     <span className="project-category">{project.category}</span>
                     <h3 className="project-title">{project.title}</h3>
                     <p className="project-description">{project.description}</p>
-                    <a className="project-link" href={`/projects/${project.images[0]}.png`} target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">&nearr;</span><span className="sr-only"> (opens in a new tab)</span></a>
+                    <a className="project-link" href={`/projects/${project.images[0]}.png`} target="_blank" rel="noopener noreferrer">Explore project<span className="sr-only"> (opens in a new tab)</span></a>
                     <ul className="project-highlights" aria-label="Project features">
                       {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
                     </ul>
@@ -166,7 +169,7 @@ export default function Home() {
                     <p className="credential-issuer">Certiport &middot; Pearson VUE</p>
                     <time dateTime={certificate.dateTime}>{certificate.date}</time>
                     <p className="credential-id">Credential ID: <span>{certificate.credential}</span></p>
-                    <a className="project-link" href={certificate.image} target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">&nearr;</span><span className="sr-only"> (opens in a new tab)</span></a>
+                    <a className="project-link" href={certificate.image} target="_blank" rel="noopener noreferrer">View certificate<span className="sr-only"> (opens in a new tab)</span></a>
                   </div>
                 </article>
               ))}
@@ -283,7 +286,7 @@ export default function Home() {
 
       <footer className="footer">
         <a className="footer-wordmark" href="#home">YANA<span>.</span></a>
-        <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p><div className="footer-socials"><a href="https://github.com/bennelyana" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a><a href="mailto:marybuisan65@gmail.com">Email &nearr;</a><a href="#home">Back to top &uarr;</a></div></div>
+        <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p><div className="footer-socials"><a href="https://github.com/bennelyana" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:marybuisan65@gmail.com">Email</a><a href="#home">Back to top &uarr;</a></div></div>
       </footer>
     </>
   );
