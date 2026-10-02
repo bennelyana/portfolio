@@ -127,21 +127,12 @@ export default function Home() {
           <div className="section-inner">
             <p className="section-eyebrow">Learning &amp; achievements</p>
             <h2 className="section-title">My <em>certifications.</em></h2>
-            <p className="section-description">Three Information Technology Specialist certifications in networking and security, awarded through Certiport.</p>
             <div className="credential-grid">
               {certificates.map((certificate) => (
                 <article className="credential-card" key={certificate.title}>
                   <a className="credential-preview" href={certificate.image} target="_blank" rel="noopener noreferrer" aria-label={`View ${certificate.title} certificate (opens in a new tab)`}>
                     <Image src={certificate.image} alt={`${certificate.title} certificate awarded to Mary Iana Bennel Balais Buisan`} width={1651} height={1275} sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" className="credential-image" />
                   </a>
-                  <div className="credential-content">
-                    <span className="project-category">IT Specialist</span>
-                    <h3>{certificate.title}</h3>
-                    <p className="credential-issuer">Certiport &middot; Pearson VUE</p>
-                    <time dateTime={certificate.dateTime}>{certificate.date}</time>
-                    <p className="credential-id">Credential ID: <span>{certificate.credential}</span></p>
-                    <a className="project-link" href={certificate.image} target="_blank" rel="noopener noreferrer">View certificate<span className="sr-only"> (opens in a new tab)</span></a>
-                  </div>
                 </article>
               ))}
             </div>
