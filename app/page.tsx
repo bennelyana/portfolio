@@ -1,88 +1,103 @@
 import Image from "next/image";
 import { projects, certificates } from "../data/showcase";
+import { technologies, technicalSkills, experience } from "../data/resume";
 import Navbar from "../components/navbar";
 
 export default function Home() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Navbar />
 
-      <main>
+      <main id="main-content">
         <section className="hero" id="home">
           <div className="hero-inner">
-            <div className="hero-grid">
+            <div className="hero-topline"><span>Mary Iana Bennel B. Buisan</span><span>IT professional &amp; educator / Philippines</span></div>
+            <h1 className="statement">
+              <span className="statement-line"><span className="line-number" aria-hidden="true">01</span>Hello, I&apos;m <em>Yana!</em><span className="portrait-stamp"><Image src="/images/profile.jpg" alt="Mary Iana Bennel Buisan" fill sizes="90px" priority /></span></span>
+              <span className="statement-line"><span className="line-number" aria-hidden="true">02</span>I create <span className="inline-symbol" aria-hidden="true">&#10035;</span> &amp; build</span>
+              <span className="statement-line"><span className="line-number" aria-hidden="true">03</span>digital <em>experiences.</em></span>
+            </h1>
+            <div className="hero-bottom"><p>Technology, creativity, and a little curiosity.<br />Thoughtful solutions for everyday life.</p><a className="round-link" href="#projects">Explore my work <span aria-hidden="true">&nearr;</span></a></div>
+            <div className="hero-previews" aria-label="A preview of my projects">
+              {[projects[0], projects[4], projects[1]].map((project) => <a href="#projects" className="hero-preview" key={project.title}><Image src={`/projects/${project.images[0]}.png`} alt={project.title} width={930} height={447} sizes="(max-width: 600px) 70vw, 30vw" /><span>{project.title}<span aria-hidden="true">&nearr;</span></span></a>)}
+            </div>
+          </div>
+        </section>
 
-              <div className="hero-content">
-                <p className="hero-small">
-                  Hi, I&apos;m
-                </p>
+        <section className="section process" id="process">
+          <div className="section-inner process-layout">
+            <div><p className="section-eyebrow">A little about my approach</p><h2 className="section-title">From an idea<br />to something <em>useful.</em></h2></div>
+            <ol className="process-list">
+              <li><span>01</span><div><h3>Understand the need.</h3><p>Start with the people, the problem, and what would make everyday tasks easier.</p></div></li>
+              <li><span>02</span><div><h3>Make it clear.</h3><p>Turn ideas into simple layouts and approachable, user-friendly experiences.</p></div></li>
+              <li><span>03</span><div><h3>Build with purpose.</h3><p>Bring the design to life, pay attention to the details, and keep improving.</p></div></li>
+            </ol>
+          </div>
+        </section>
 
-                <h1 className="hero-title">
-                  Mary Iana
-                  <span>Bennel B.</span>
-                  Buisan
-                </h1>
-
-                <h2 className="hero-role">
-                  IT Professional &amp; Educator
-                </h2>
-
-                <p className="hero-tags">
-                  Technology <span>|</span> Education{" "}
-                  <span>|</span> Creativity
-                </p>
-
-                <p className="hero-description">
-                  I create practical digital solutions by combining
-                  technology, creativity, and a people-centered
-                  approach. I enjoy learning, designing, developing,
-                  and turning ideas into meaningful experiences.
-                </p>
-
-                <div className="hero-buttons">
-                  <a
-                    href="#contact"
-                    className="button button-primary"
-                  >
-                    Get In Touch
-                  </a>
-
-                  <a
-                    href="#projects"
-                    className="button button-outline"
-                  >
-                    View My Work
-                  </a>
-                </div>
-              </div>
-
-              <div className="hero-photo-wrap">
-                <div className="hero-photo-background"></div>
-
-                <div className="hero-photo-frame">
-                  <img
-                    src="/images/profile.jpg"
-                    alt="Mary Iana Bennel Buisan"
-                    className="hero-photo"
-                  />
-                </div>
-              </div>
-
+        <section className="section" id="projects">
+          <div className="section-inner">
+            <p className="section-eyebrow">Selected work &middot; 05 projects</p>
+            <h2 className="section-title">A few things<br />I&apos;ve <em>built.</em></h2>
+            <p className="section-description">A collection of my web, mobile, and desktop projects, built around everyday needs in healthcare, business, and personal productivity.</p>
+            <div className="projects-grid">
+              {projects.map((project, index) => (
+                <article className="project-card" key={project.title}>
+                  <div className="project-heading">
+                    <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="technology-badge">{project.technology}</span>
+                  </div>
+                  <div className="project-gallery">
+                    {project.images.map((image, imageIndex) => (
+                      <a key={image} href={`/projects/${image}.png`} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} screenshot ${imageIndex + 1} (opens in a new tab)`}>
+                        <Image src={`/projects/${image}.png`} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"}`} fill sizes="(max-width: 900px) 90vw, 550px" />
+                      </a>
+                    ))}
+                  </div>
+                  <div className="project-content">
+                    <span className="project-category">{project.category}</span>
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-description">{project.description}</p>
+                    <a className="project-link" href={`/projects/${project.images[0]}.png`} target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">&nearr;</span><span className="sr-only"> (opens in a new tab)</span></a>
+                    <ul className="project-highlights" aria-label="Project features">
+                      {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                    </ul>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
         <section className="section about" id="about">
           <div className="section-inner">
-            <h2 className="section-title">
-              Get to know <em>me.</em>
-            </h2>
-
-            <p className="about-text">
-              I am an IT professional and educator passionate about
-              technology, creativity, digital solutions, and
-              meaningful learning experiences.
-            </p>
+            <div className="about-intro">
+              <div>
+                <p className="section-eyebrow">Get to know me</p>
+                <h2 className="about-title">Who am I?</h2>
+              </div>
+              <div className="about-copy">
+                <p>I am an Information Technology professional and educator with a passion for technology, creativity, learning, and helping people.</p>
+                <p>My experience includes web development, UI/UX design, technical support, customer service, education, virtual assistance, and administrative work.</p>
+                <p>I enjoy creating websites, exploring new technologies, designing user-friendly interfaces, and finding practical solutions to everyday problems.</p>
+                <p>I believe that technology should be useful, accessible, and meaningful. I am continuously learning and improving my skills through new experiences, challenges, and projects.</p>
+              </div>
+            </div>
+            <div className="about-traits">
+              {[
+                { title: "Tech Enthusiast", description: "I enjoy exploring new technologies, learning new tools, and discovering better ways to solve problems." },
+                { title: "Creative Thinker", description: "I enjoy combining technology and creativity to create simple, useful, and visually appealing digital experiences." },
+                { title: "Educator", description: "I believe learning becomes more meaningful when knowledge is shared and used to help others." },
+                { title: "Lifelong Learner", description: "I continuously improve my skills by embracing new challenges, learning from experience, and staying curious." },
+              ].map((trait, index) => (
+                <article className="about-trait" key={trait.title}>
+                  <span className="about-trait-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{trait.title}</h3>
+                  <p>{trait.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -118,65 +133,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section tools" id="tools">
+        <section className="section expertise" id="expertise">
           <div className="section-inner">
-            <h2 className="section-title">
-              What&apos;s in my <em>toolkit.</em>
-            </h2>
-
-            <div className="tools-grid">
-              <div className="tool-card">
-                <span className="tool-name">Canva</span>
-                <span className="tool-type">Design</span>
-              </div>
-
-              <div className="tool-card">
-                <span className="tool-name">Adobe Photoshop</span>
-                <span className="tool-type">Design</span>
-              </div>
-
-              <div className="tool-card">
-                <span className="tool-name">Google Workspace</span>
-                <span className="tool-type">Productivity</span>
-              </div>
-
-              <div className="tool-card">
-                <span className="tool-name">Microsoft Office</span>
-                <span className="tool-type">Productivity</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="projects">
-          <div className="section-inner">
-            <p className="section-eyebrow">Selected work ? 05 projects</p>
-            <h2 className="section-title">Ideas turned into <em>projects.</em></h2>
-            <p className="section-description">A collection of my web, mobile, and desktop projects, built around everyday needs in healthcare, business, and personal productivity.</p>
-            <div className="projects-grid">
-              {projects.map((project, index) => (
-                <article className="project-card" key={project.title}>
-                  <div className="project-heading">
-                    <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                    <span className="technology-badge">{project.technology}</span>
-                  </div>
-                  <div className="project-gallery">
-                    {project.images.map((image, imageIndex) => (
-                      <a key={image} href={`/projects/${image}.png`} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} screenshot ${imageIndex + 1} (opens in a new tab)`}>
-                        <Image src={`/projects/${image}.png`} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"}`} fill sizes="(max-width: 900px) 90vw, 550px" />
-                      </a>
-                    ))}
-                  </div>
-                  <div className="project-content">
-                    <span className="project-category">{project.category}</span>
-                    <h3 className="project-title">{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
-                    <ul className="project-highlights" aria-label="Project features">
-                      {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-                    </ul>
-                  </div>
-                </article>
+            <p className="section-eyebrow">My technical skills</p>
+            <h2 className="section-title">Technologies I <em>use.</em></h2>
+            <p className="section-description">The languages, tools, and platforms I use for development, design, and everyday work.</p>
+            <ul className="technology-grid" aria-label="Technologies and tools">
+              {technologies.map(([name, mark]) => (
+                <li key={name}><span className="technology-icon" aria-hidden="true">{mark}</span><span>{name}</span></li>
               ))}
+            </ul>
+            <div className="technical-skills-grid">
+              {technicalSkills.map((group) => <article className="technical-skill" key={group.title}><h3>{group.title}</h3><p>{group.skills}</p></article>)}
             </div>
           </div>
         </section>
@@ -195,13 +163,43 @@ export default function Home() {
                   <div className="credential-content">
                     <span className="project-category">IT Specialist</span>
                     <h3>{certificate.title}</h3>
-                    <p className="credential-issuer">Certiport ? Pearson VUE</p>
+                    <p className="credential-issuer">Certiport &middot; Pearson VUE</p>
                     <time dateTime={certificate.dateTime}>{certificate.date}</time>
                     <p className="credential-id">Credential ID: <span>{certificate.credential}</span></p>
-                    <a className="project-link" href={certificate.image} target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">?</span><span className="sr-only"> (opens in a new tab)</span></a>
+                    <a className="project-link" href={certificate.image} target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">&nearr;</span><span className="sr-only"> (opens in a new tab)</span></a>
                   </div>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section experience" id="experience">
+          <div className="section-inner">
+            <p className="section-eyebrow">My journey</p>
+            <h2 className="section-title">Work &amp; <em>education.</em></h2>
+            <div className="resume-grid">
+              <div>
+                <h3 className="resume-heading">Work experience</h3>
+                <ol className="experience-list">
+                  {experience.map((job) => (
+                    <li className="experience-item" key={job.company}>
+                      <p className="experience-period">{job.period}</p>
+                      <h4>{job.role}</h4>
+                      <p className="experience-company">{job.company}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div>
+                <h3 className="resume-heading">College education</h3>
+                <article className="education-card">
+                  <p className="section-eyebrow">2021 - 2025</p>
+                  <h4>Bachelor of Science in Information Technology</h4>
+                  <p>University of Mindanao</p>
+                  <span className="education-status">College graduate</span>
+                </article>
+              </div>
             </div>
           </div>
         </section>
@@ -264,33 +262,17 @@ export default function Home() {
                 </p>
               </div>
 
-              <form className="contact-form">
-
-                <input
-                  className="contact-input"
-                  type="text"
-                  placeholder="Name"
-                />
-
-                <input
-                  className="contact-input"
-                  type="email"
-                  placeholder="Email"
-                />
-
-                <textarea
-                  className="contact-input textarea"
-                  placeholder="Tell me about your project..."
-                />
-
-                <button
-                  type="submit"
-                  className="button contact-submit"
-                >
-                  Send Message →
-                </button>
-
-              </form>
+              <address className="contact-details">
+                <a href="mailto:marybuisan65@gmail.com" className="contact-detail">
+                  <span className="contact-label">Email me</span>
+                  <span>marybuisan65@gmail.com</span>
+                </a>
+                <a href="tel:+639161138339" className="contact-detail">
+                  <span className="contact-label">Call me</span>
+                  <span>0916 113 8339</span>
+                </a>
+                <a href="mailto:marybuisan65@gmail.com" className="button contact-submit">Let&apos;s get in touch &rarr;</a>
+              </address>
 
             </div>
 
@@ -300,15 +282,8 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <p>
-          © {new Date().getFullYear()} Yana Buisan
-        </p>
-
-        <div className="footer-socials">
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Facebook</a>
-        </div>
+        <a className="footer-wordmark" href="#home">YANA<span>.</span></a>
+        <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p><div className="footer-socials"><a href="https://github.com/bennelyana" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a><a href="mailto:marybuisan65@gmail.com">Email &nearr;</a><a href="#home">Back to top &uarr;</a></div></div>
       </footer>
     </>
   );
