@@ -12,18 +12,18 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" id="home">
           <div className="hero-inner">
-            <div className="hero-topline"><span>Mary Iana Bennel B. Buisan</span><span>IT professional &amp; educator / Philippines</span></div>
+            <div className="hero-topline"><span>IT professional &amp; educator</span><span>Based in the Philippines</span></div>
             <div className="hero-intro">
             <h1 className="statement">
               <span className="statement-line"><span className="line-number" aria-hidden="true">01</span>Hello, I&apos;m <em>Yana!</em></span>
               <span className="statement-line"><span className="line-number" aria-hidden="true">02</span>I create <span className="inline-symbol" aria-hidden="true">&#10035;</span> &amp; build</span>
               <span className="statement-line"><span className="line-number" aria-hidden="true">03</span>digital <em>experiences.</em></span>
             </h1>
-            <div className="hero-portrait"><Image src="/images/profile.jpg" alt="Mary Iana Bennel Buisan" fill sizes="(max-width: 900px) 280px, 22vw" loading="eager" /></div>
+            <div className="hero-portrait"><div className="hero-portrait-frame"><Image src="/images/profile.jpg" alt="Mary Iana Bennel Buisan" fill sizes="(max-width: 600px) 85vw, (max-width: 900px) 420px, 32vw" loading="eager" /></div></div>
             </div>
-            <div className="hero-bottom"><p>Technology, creativity, and a little curiosity.<br />Thoughtful solutions for everyday life.</p><a className="round-link" href="#projects">Explore my work</a></div>
+            <div className="hero-bottom"><p className="hero-name">Mary Iana Bennel Buisan</p><p>Technology, creativity, and a little curiosity.<br />Thoughtful solutions for everyday life.</p><a className="round-link" href="#projects">Explore my work</a></div>
             <div className="hero-previews" aria-label="A preview of my projects">
-              {[projects[0], projects[4], projects[1]].map((project) => <a href="#projects" className="hero-preview" key={project.title}><Image src={`/projects/${project.images[0]}.png`} alt={project.title} width={930} height={447} sizes="(max-width: 600px) 70vw, 30vw" /><span>{project.title}</span></a>)}
+              {[projects[0], projects[4], projects[1]].map((project, index) => <a href={`#project-${projects.indexOf(project) + 1}`} className="hero-preview" key={project.title}><div className="preview-image"><Image src={`/projects/${project.images[0]}.png`} alt={project.title} width={930} height={447} sizes="(max-width: 600px) 90vw, 30vw" /></div><span className="preview-category">{project.category}</span><span className="preview-title"><span>{project.title}</span><span className="preview-index">0{index + 1}</span></span></a>)}
             </div>
           </div>
         </section>
@@ -46,7 +46,7 @@ export default function Home() {
             <p className="section-description">A collection of my web, mobile, and desktop projects, built around everyday needs in healthcare, business, and personal productivity.</p>
             <div className="projects-grid">
               {projects.map((project, index) => (
-                <article className="project-card" key={project.title}>
+                <article className="project-card" id={`project-${index + 1}`} key={project.title}>
                   <div className="project-heading">
                     <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                     <span className="technology-badge">{project.technology}</span>

@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: "Medical System",
+    title: "I&J Medical System",
     images: ["medical-system"],
     category: "Healthcare management",
     technology: "PHP",
