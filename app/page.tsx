@@ -144,7 +144,6 @@ export default function Home() {
           <div className="section-inner">
             <h2 className="section-title">Education and <em>Work.</em></h2>
             <div className="career-panel">
-              <div className="career-panel-header">My career &amp; education</div>
               <article className="career-entry">
                 <h3 className="career-label">College education</h3>
                 <div className="career-row">
@@ -228,7 +227,7 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p><div className="footer-socials"><a href="https://github.com/bennelyana" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:marybuisan65@gmail.com">Email</a><a href="#home">Back to top &uarr;</a></div></div>
+        <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p><div className="footer-socials"><a href="https://github.com/bennelyana" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:marybuisan65@gmail.com">Email</a></div></div>
       </footer>
     </>
   );

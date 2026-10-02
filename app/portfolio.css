@@ -321,6 +321,13 @@ html[data-theme="dark"] .contact-send { color: #21151c; }
   body .contact-box { padding: 24px 18px; }
   body .credential-grid { grid-template-columns: 1fr; max-width: 360px; }
 }
+body .theme-toggle { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+body .theme-toggle:hover { background: transparent; border: 0; color: var(--pink-dark); }
+body .contact-box { padding: 30px; gap: 32px; grid-template-columns: .8fr 1.2fr; }
+body .contact-box .section-title { font-size: clamp(28px, 3vw, 40px); letter-spacing: -1.5px; }
+body .contact-text { margin-top: 16px; font-size: 14px; line-height: 1.75; }
+@media (max-width: 900px) { body .contact-box { grid-template-columns: 1fr; gap: 24px; } }
+@media (max-width: 600px) { body .contact-box { padding: 22px 18px; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
