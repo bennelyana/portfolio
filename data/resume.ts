@@ -1,9 +1,9 @@
 export const technologies = [
-  ["PHP", "PHP"], ["MySQL", "SQL"], ["HTML", "</>"], ["CSS", "CSS"],
-  ["Python", "Py"], ["Flutter", "Fl"], ["VB.NET", "VB"],
-  ["Canva", "Ca"], ["AutoCAD", "AC"], ["Google Workspace", "GW"],
-  ["Microsoft Office", "MS"], ["Zendesk", "Ze"], ["Dixa", "Di"],
-  ["Asana", "As"], ["Calendly", "Cal"],
+  ["PHP", "/logos/php.svg"], ["MySQL", "/logos/mysql.svg"], ["HTML", "/logos/html-5.svg"], ["CSS", "/logos/css-3.svg"],
+  ["Python", "/logos/python.svg"], ["Flutter", "/logos/flutter.svg"], ["VB.NET", "/logos/visualbasic.svg"],
+  ["Canva", "/logos/canva.svg"], ["AutoCAD", "/logos/autocad.svg"], ["Google Workspace", "/logos/google-workspace.svg"],
+  ["Microsoft Office", "/logos/microsoftoffice.svg"], ["Zendesk", "/logos/zendesk.svg"], ["Dixa", "/logos/dixa.jpeg"],
+  ["Asana", "/logos/asana.svg"], ["Calendly", "/logos/calendly.svg"],
 ];
 
 export const technicalSkills = [

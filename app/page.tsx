@@ -52,7 +52,7 @@ export default function Home() {
                     <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                     <span className="technology-badge">{project.technology}</span>
                   </div>
-                  <div className="project-gallery">
+                  <div className="project-gallery" aria-label="Project screenshots">
                     {project.images.map((image, imageIndex) => (
                       <a key={image} href={`/projects/${image}.png`} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} screenshot ${imageIndex + 1} (opens in a new tab)`}>
                         <Image src={`/projects/${image}.png`} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"}`} fill sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />
@@ -69,7 +69,6 @@ export default function Home() {
                       {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
                     </ul>
                     </details>
-                    <a className="project-link" href={`/projects/${project.images[0]}.png`} target="_blank" rel="noopener noreferrer">View screenshots<span className="sr-only"> (opens in a new tab)</span></a>
                   </div>
                 </article>
               ))}
@@ -108,46 +107,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="services">
-          <div className="section-inner">
-            <h2 className="section-title">
-              What I <em>do.</em>
-            </h2>
-
-            <div className="services-grid">
-              <div className="service-card">
-                <h3>Digital Marketing</h3>
-                <p>
-                  Creating engaging digital content and strategies.
-                </p>
-              </div>
-
-              <div className="service-card">
-                <h3>Content Creation</h3>
-                <p>
-                  Designing visual and written content for digital
-                  platforms.
-                </p>
-              </div>
-
-              <div className="service-card">
-                <h3>Web &amp; Design</h3>
-                <p>
-                  Building clean and practical digital experiences.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section className="section expertise" id="expertise">
           <div className="section-inner">
-            <p className="section-eyebrow">My technical skills</p>
             <h2 className="section-title">Technologies I <em>use.</em></h2>
             <p className="section-description">The languages, tools, and platforms I use for development, design, and everyday work.</p>
             <ul className="technology-grid" aria-label="Technologies and tools">
-              {technologies.map(([name, mark]) => (
-                <li key={name}><span className="technology-icon" aria-hidden="true">{mark}</span><span>{name}</span></li>
+              {technologies.map(([name, logo]) => (
+                <li key={name}><span className="technology-icon"><Image src={logo} alt="" width={42} height={42} unoptimized /></span><span>{name}</span></li>
               ))}
             </ul>
             <div className="technical-skills-grid">
