@@ -48,7 +48,7 @@ export default function Home() {
             <p className="section-description">A collection of my web, mobile, and desktop projects, built around everyday needs in healthcare, business, and personal productivity.</p>
             <div className="projects-grid">
               {projects.map((project, index) => (
-                <article className="project-card" id={`project-${index + 1}`} key={project.title}>
+                <article className={`project-card project-kind-${project.technology === "Flutter" ? "mobile" : "desktop"}`} id={`project-${index + 1}`} key={project.title}>
                   <div className="project-heading">
                     <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                     <span className="technology-badge">{project.technology}</span>
@@ -63,6 +63,7 @@ export default function Home() {
                   <div className="project-content">
                     <span className="project-category">{project.category}</span>
                     <h3 className="project-title">{project.title}</h3>
+                    <p className="project-teaser">{project.highlights.slice(0, 2).join(" · ")}</p>
                     <details className="project-details">
                       <summary>About this project</summary>
                       <p className="project-description">{project.description}</p>
@@ -74,6 +75,7 @@ export default function Home() {
                 </article>
               ))}
             </div>
+            <div className="project-invitation"><p>Have something in mind? Let&apos;s build it together.</p><a href="#contact">Tell me about your idea</a></div>
           </div>
         </section>
 
@@ -81,6 +83,7 @@ export default function Home() {
           <div className="section-inner">
             <div className="about-intro">
               <div>
+                <div className="about-orbit" aria-hidden="true"><span className="orbit-mark orbit-code">&lt;/&gt;</span><span className="orbit-mark orbit-spark">✦</span><span className="orbit-mark orbit-plus">+</span></div>
                 <p className="section-eyebrow">Get to know me</p>
                 <h2 className="about-title">Who am I?</h2>
               </div>

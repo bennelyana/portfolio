@@ -328,6 +328,50 @@ body .contact-box .section-title { font-size: clamp(28px, 3vw, 40px); letter-spa
 body .contact-text { margin-top: 16px; font-size: 14px; line-height: 1.75; }
 @media (max-width: 900px) { body .contact-box { grid-template-columns: 1fr; gap: 24px; } }
 @media (max-width: 600px) { body .contact-box { padding: 22px 18px; } }
+/* Real project screens presented in polished device mockups. */
+body #projects .section-title { font-size: clamp(36px, 4.4vw, 58px); }
+body .project-card { border-radius: 20px; transition: transform .25s, box-shadow .25s, border-color .25s; }
+body .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px #51424714; }
+body .project-heading { padding: 12px 18px; background: var(--white); }
+body .project-gallery { min-height: 215px; padding: 24px 20px; background: radial-gradient(ellipse at 50% 30%, var(--white), transparent 75%), var(--pink-light); }
+body .project-card:nth-child(2n) .project-gallery { background: radial-gradient(ellipse at 50% 30%, var(--white), transparent 75%), var(--cream); }
+body .project-screenshot { height: 160px; border: 5px solid #322a30; border-bottom-width: 10px; border-radius: 10px; background: #fff; box-shadow: 0 14px 20px #29232620; transform: perspective(900px) rotateY(-5deg) rotateX(3deg); transition: transform .35s; }
+body .project-screenshot::before { height: 9px; background: #322a30; border: 0; }
+body .project-screenshot img { padding: 9px 0 0; object-fit: contain; }
+body .project-screenshot:hover { transform: perspective(900px) rotateY(0) translateY(-4px); }
+body .project-screenshot:hover img { transform: none; }
+body .project-kind-mobile .project-screenshot { flex: 0 0 92px; height: 177px; margin-inline: auto; border: 5px solid #322a30; border-radius: 16px; background: #fff; transform: rotate(-5deg); }
+body .project-kind-mobile .project-screenshot::before { width: 30px; height: 5px; inset: 2px auto auto calc(50% - 15px); border-radius: 999px; }
+body .project-kind-mobile .project-screenshot img { padding: 7px 2px; }
+body .project-kind-mobile .project-screenshot:hover { transform: rotate(0); }
+body .project-title { font-size: 22px; }
+.project-teaser { margin-top: 8px; font-size: 12px; line-height: 1.6; color: var(--gray); }
+.project-invitation { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 24px; margin-top: 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--pink-light); }
+.project-invitation p { font-size: 15px; color: var(--brown); }
+.project-invitation a { padding: 11px 18px; border-radius: 999px; background: var(--pink-dark); color: var(--cream); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.project-invitation a:hover { background: var(--brown); }
+/* A quiet animated orbit gives the About heading some life. */
+body .about-intro > div:first-child { position: relative; isolation: isolate; padding: 52px 8px; }
+.about-orbit { position: absolute; width: 280px; height: 280px; left: calc(50% - 140px); top: calc(50% - 140px); z-index: -1; border: 1px solid var(--border); border-radius: 50%; background: radial-gradient(circle, var(--pink-light), transparent 70%); }
+.about-orbit::before { content: ""; position: absolute; inset: 20px; border: 1px dashed var(--border); border-radius: 50%; animation: orbit-spin 45s linear infinite; }
+.orbit-mark { position: absolute; display: grid; place-items: center; width: 40px; height: 40px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; color: var(--pink-dark); font-size: 20px; box-shadow: 0 6px 16px #5142470a; animation: orbit-float 6s ease-in-out infinite; }
+.orbit-code { top: 0; left: 24px; font-size: 14px; }
+.orbit-spark { right: 0; top: 58px; animation-delay: -2s; }
+.orbit-plus { bottom: 8px; left: 60px; animation-delay: -4s; }
+body .about-trait { border-top: 3px solid var(--pink); }
+@keyframes orbit-spin { to { transform: rotate(360deg); } }
+@keyframes orbit-float { 50% { transform: translateY(-7px) rotate(6deg); } }
+/* Center the invitation directly above the contact form. */
+body .contact-box { display: flex; flex-direction: column; gap: 26px; max-width: 800px; margin-inline: auto; padding: 36px; }
+body .contact-box > div:first-child { text-align: center; width: 100%; }
+body .contact-box .section-title { font-size: clamp(30px, 3.3vw, 44px); }
+body .contact-text { max-width: 620px; margin: 14px auto 0; }
+.contact-form-panel { width: 100%; max-width: 580px; }
+@media (max-width: 600px) {
+  .project-invitation { flex-direction: column; text-align: center; padding: 20px; gap: 12px; }
+  body .contact-box { padding: 26px 18px; }
+  body .about-intro > div:first-child { padding: 65px 0; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
