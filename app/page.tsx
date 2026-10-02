@@ -3,10 +3,12 @@ import { projects, certificates } from "../data/showcase";
 import { technologies, technicalSkills, experience } from "../data/resume";
 import Navbar from "../components/navbar";
 import ContactForm from "../components/contact-form";
+import ScrollReveal from "../components/scroll-reveal";
 
 export default function Home() {
   return (
     <>
+      <ScrollReveal />
       <a className="skip-link" href="#main-content">Skip to content</a>
       <Navbar />
 
@@ -56,7 +58,7 @@ export default function Home() {
                   <div className="project-gallery" aria-label="Project screenshots">
                     {project.images.map((image, imageIndex) => (
                       <a key={image} href={`/projects/${image}.png`} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} screenshot ${imageIndex + 1} (opens in a new tab)`}>
-                        <Image src={`/projects/${image}.png`} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"}`} fill sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />
+                        <Image src={`/projects/${image}-preview.png`} alt={`${project.title} refreshed ${image.includes("login") ? "login and registration" : "application screen"} preview`} fill sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />
                       </a>
                     ))}
                   </div>
@@ -64,6 +66,7 @@ export default function Home() {
                     <span className="project-category">{project.category}</span>
                     <h3 className="project-title">{project.title}</h3>
                     <p className="project-teaser">{project.highlights.slice(0, 2).join(" · ")}</p>
+                    <p className="preview-caption">Refreshed UI preview · tap image for original</p>
                     <details className="project-details">
                       <summary>About this project</summary>
                       <p className="project-description">{project.description}</p>
@@ -75,7 +78,6 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <div className="project-invitation"><p>Have something in mind? Let&apos;s build it together.</p><a href="#contact">Tell me about your idea</a></div>
           </div>
         </section>
 
@@ -230,7 +232,7 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p><div className="footer-socials"><a href="https://github.com/bennelyana" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:marybuisan65@gmail.com">Email</a></div></div>
+        <div className="footer-bottom"><p>&copy; {new Date().getFullYear()} Mary Iana Bennel B. Buisan</p></div>
       </footer>
     </>
   );
