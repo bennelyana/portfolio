@@ -1,3 +1,5 @@
+import ThemeToggle from "./theme-toggle";
+
 export default function Navbar() {
   return (
     <header className="navbar">
@@ -15,6 +17,7 @@ export default function Navbar() {
               <span>{label}</span>
             </a>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
     </header>

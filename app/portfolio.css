@@ -250,6 +250,52 @@ body .footer { width: calc(100% - var(--page-gutter) * 2); max-width: var(--cont
   body .portfolio-nav { width: 100%; justify-content: flex-start; }
 }
 @media (max-width: 600px) { :root { --page-gutter: 20px; } }
+/* Compact career and technology panels with light and dark themes. */
+body .about-intro .section-eyebrow { font-size: 20px; }
+body .about-title { font-size: clamp(42px, 4.8vw, 60px); }
+body .credential-grid { max-width: 960px; margin-inline: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+body .credential-preview { padding: 7px; transition: transform .2s; }
+body .credential-preview:hover { transform: scale(1.025); }
+body .technology-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); padding: 24px; gap: 22px 16px; border: 1px solid var(--border); border-radius: 22px; background: var(--white); }
+body .technology-grid li { flex-direction: column; gap: 8px; text-align: center; padding: 0; background: transparent; border: 0; border-radius: 0; font-size: 11px; }
+body .technology-icon { width: 50px; height: 50px; padding: 10px; background: #f2ece4; border: 1px solid #e9ded1; border-radius: 14px; }
+.career-panel { max-width: 980px; margin: 30px auto 0; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: var(--white); }
+.career-panel-header { padding: 16px 22px; border-bottom: 1px solid var(--border); font-weight: 600; font-size: 14px; }
+.career-entry, .career-work { padding: 22px; }
+.career-entry { padding-bottom: 8px; }
+.career-label { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; color: var(--pink-dark); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.career-label::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.career-row { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: start; gap: 12px; }
+.career-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--pink-dark); color: var(--cream); font-size: 11px; font-weight: 700; }
+.career-copy h4 { font-size: 15px; line-height: 1.4; font-weight: 600; }
+.career-copy p { margin-top: 3px; color: var(--gray); font-size: 13px; }
+.career-status { display: inline-block; margin-top: 7px; color: var(--brown); font-size: 12px; }
+.career-period { padding-top: 3px; color: var(--gray); font-size: 12px; white-space: nowrap; }
+.career-list { list-style: none; }
+.career-list .career-row + .career-row { border-top: 1px solid var(--border); padding-top: 18px; margin-top: 18px; }
+.theme-toggle { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--white); color: var(--brown); cursor: pointer; font: inherit; font-size: 12px; font-weight: 600; }
+.theme-toggle:hover { border-color: var(--pink); background: var(--pink-light); }
+.theme-toggle:focus-visible { outline: 3px solid var(--pink-dark); outline-offset: 3px; }
+.theme-light-label { display: none; }
+html[data-theme="dark"] { color-scheme: dark; --cream: #171417; --white: #241e23; --dark: #f6edf2; --brown: #e3ccd7; --gray: #bcaab2; --pink: #d58ca9; --pink-dark: #da8ead; --pink-light: #382731; --border: #4a3540; }
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"] .theme-dark-label { display: none; }
+html[data-theme="dark"] .theme-light-label { display: inline; }
+html[data-theme="dark"] body .hero-bottom .round-link, html[data-theme="dark"] body .contact-submit, html[data-theme="dark"] body .portfolio-nav a:hover { color: #21151c; }
+html[data-theme="dark"] body .contact-submit { background: var(--pink-dark); }
+html[data-theme="dark"] body .navbar { background: var(--cream); border-color: var(--border); }
+html[data-theme="dark"] body .project-screenshot { background: #fcfaf8; }
+html[data-theme="dark"] body .hero-portrait-frame { border-color: #43333c; }
+@media (max-width: 1000px) { body .technology-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  body .technology-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 18px 12px; gap: 20px 10px; }
+  body .credential-grid { grid-template-columns: 1fr; max-width: 340px; }
+  .career-entry, .career-work { padding: 18px; }
+  .career-row { grid-template-columns: 32px minmax(0, 1fr); gap: 10px; }
+  .career-icon { width: 32px; height: 32px; }
+  .career-period { grid-column: 2; padding: 0; }
+  .career-copy h4 { font-size: 14px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }

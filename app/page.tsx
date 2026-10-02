@@ -142,24 +142,24 @@ export default function Home() {
         <section className="section experience" id="experience">
           <div className="section-inner">
             <h2 className="section-title">Education and <em>Work.</em></h2>
-            <div className="resume-grid">
-              <div>
-                <h3 className="resume-heading">College education</h3>
-                <article className="education-card">
-                  <p className="section-eyebrow">2021 - 2025</p>
-                  <h4>Bachelor of Science in Information Technology</h4>
-                  <p>University of Mindanao</p>
-                  <span className="education-status">College graduate</span>
-                </article>
-              </div>
-              <div>
-                <h3 className="resume-heading">Work experience</h3>
-                <ol className="experience-list">
+            <div className="career-panel">
+              <div className="career-panel-header">My career &amp; education</div>
+              <article className="career-entry">
+                <h3 className="career-label">College education</h3>
+                <div className="career-row">
+                  <span className="career-icon" aria-hidden="true">UM</span>
+                  <div className="career-copy"><h4>Bachelor of Science in Information Technology</h4><p>University of Mindanao</p><span className="career-status">College graduate</span></div>
+                  <p className="career-period">2021 - 2025</p>
+                </div>
+              </article>
+              <div className="career-work">
+                <h3 className="career-label">Work experience</h3>
+                <ol className="career-list">
                   {experience.map((job) => (
-                    <li className="experience-item" key={job.company}>
-                      <p className="experience-period">{job.period}</p>
-                      <h4>{job.role}</h4>
-                      <p className="experience-company">{job.company}</p>
+                    <li className="career-row" key={job.company}>
+                      <span className="career-icon" aria-hidden="true">{job.company.split(" ").map((word) => word[0]).slice(0, 2).join("")}</span>
+                      <div className="career-copy"><h4>{job.role}</h4><p>{job.company}</p></div>
+                      <p className="career-period">{job.period}</p>
                     </li>
                   ))}
                 </ol>
