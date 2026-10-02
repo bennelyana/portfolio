@@ -176,32 +176,23 @@ export default function Home() {
             </h2>
 
             <div className="whyme-grid">
-
-              <div className="whyme-card">
-                <div className="whyme-icon">01</div>
-                <h3>Creative Thinking</h3>
-                <p>
-                  I approach projects with curiosity and creativity.
-                </p>
-              </div>
-
-              <div className="whyme-card">
-                <div className="whyme-icon">02</div>
-                <h3>Detail Oriented</h3>
-                <p>
-                  I care about the small details that make a project
-                  better.
-                </p>
-              </div>
-
-              <div className="whyme-card">
-                <div className="whyme-icon">03</div>
-                <h3>Always Learning</h3>
-                <p>
-                  I continuously learn new tools and technologies.
-                </p>
-              </div>
-
+              {[
+                { title: "Creative Thinking", description: "I approach projects with curiosity and creativity, turning ideas into practical solutions." },
+                { title: "Detail Oriented", description: "I pay attention to the small details that make a project clear, reliable, and easy to use." },
+                { title: "Always Learning", description: "I keep exploring new tools and technologies to improve my skills and the work I deliver." },
+                { title: "Clear Communication", description: "I listen carefully, explain ideas clearly, and keep you informed throughout the project." },
+                { title: "People First", description: "I build approachable experiences around the people who will use them and their everyday needs." },
+                { title: "Adaptable Support", description: "I bring experience in technology, education, and customer support to help with a variety of tasks." },
+              ].map((reason, index) => (
+                <details className="whyme-card" key={reason.title}>
+                  <summary>
+                    <span className="whyme-icon" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="whyme-title">{reason.title}</span>
+                    <span className="whyme-toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <p>{reason.description}</p>
+                </details>
+              ))}
             </div>
 
           </div>
