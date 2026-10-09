@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Yana Buisan — Creative Digital Professional",
+  title: "Yana Buisan",
   description:
     "Personal portfolio of Yana Buisan — digital marketing, creative design, content, and web projects.",
 };
