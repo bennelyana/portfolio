@@ -786,6 +786,10 @@ a:focus-visible { outline: 3px solid var(--pink-dark); outline-offset: 4px; }
 .technical-skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
 .technical-skill { padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: var(--white); }
 .technical-skill h3 { font-size: 15px; line-height: 1.4; }
+.technical-skill h4 { font-size: 15px; line-height: 1.4; }
+.va-tools { margin-top: 48px; }
+.va-tools-title { font-size: 26px; line-height: 1.3; }
+.technical-skill .va-tool-names { color: var(--pink-dark); font-weight: 600; }
 .technical-skill p { margin-top: 10px; color: var(--gray); font-size: 13px; }
 .experience { background: var(--white); }
 .resume-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 60px; margin-top: 42px; }

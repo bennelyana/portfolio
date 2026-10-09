@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { projects, certificates } from "../data/showcase";
-import { technologies, technicalSkills, experience } from "../data/resume";
+import { technologies, technicalSkills, virtualAssistantTools, experience } from "../data/resume";
 import Navbar from "../components/navbar";
 import ContactForm from "../components/contact-form";
 import ScrollReveal from "../components/scroll-reveal";
@@ -126,6 +126,19 @@ export default function Home() {
             <div className="technical-skills-grid">
               {technicalSkills.map((group) => <article className="technical-skill" key={group.title}><h3>{group.title}</h3><p>{group.skills}</p></article>)}
             </div>
+            <div className="va-tools">
+              <h3 className="va-tools-title">Virtual Assistant Tools</h3>
+              <p className="section-description">Practical tools for keeping communication, schedules, records, and day-to-day business tasks organized.</p>
+              <div className="technical-skills-grid">
+                {virtualAssistantTools.map((group) => (
+                  <article className="technical-skill" key={group.title}>
+                    <h4>{group.title}</h4>
+                    <p className="va-tool-names">{group.tools}</p>
+                    <p>{group.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -136,9 +149,13 @@ export default function Home() {
             <div className="credential-grid">
               {certificates.map((certificate) => (
                 <article className="credential-card" key={certificate.title}>
-                  <a className="credential-preview" href={certificate.image} target="_blank" rel="noopener noreferrer" aria-label={`View ${certificate.title} certificate (opens in a new tab)`}>
+                  <a className="credential-preview" href="https://www.credly.com/users/mary-iana-bennel-buisan" target="_blank" rel="noopener noreferrer" aria-label={`View Credly profile for ${certificate.title} (opens in a new tab)`}>
                     <Image src={certificate.image} alt={`${certificate.title} certificate awarded to Mary Iana Bennel Balais Buisan`} width={1651} height={1275} sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" className="credential-image" />
                   </a>
+                  <div className="credential-content">
+                    <h3>{certificate.title}</h3>
+                    <a className="project-link" href="https://www.credly.com/users/mary-iana-bennel-buisan" target="_blank" rel="noopener noreferrer">View on Credly<span className="sr-only"> (opens in a new tab)</span></a>
+                  </div>
                 </article>
               ))}
             </div>
