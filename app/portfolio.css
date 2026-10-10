@@ -388,7 +388,17 @@ body .project-screenshot:hover img { transform: scale(1.025); }
   body .contact-box { padding: 24px 16px; }
   body .credential-grid { max-width: 320px; }
 }
-.preview-caption { margin-top: 6px; color: var(--gray); font-size: 10px; line-height: 1.5; }
+/* Compact project cards, with full screenshots available on click. */
+body #projects .projects-grid { max-width: 1080px; margin-inline: auto; gap: 18px; }
+body #projects .project-heading { padding: 10px 14px; }
+body #projects .project-gallery { min-height: 160px; padding: 16px 14px; gap: 10px; }
+body #projects .project-screenshot { height: 125px; }
+body #projects .project-kind-mobile .project-screenshot { flex-basis: 70px; height: 135px; }
+body #projects .project-content { padding: 14px; }
+body #projects .project-title { font-size: 19px; }
+@media (max-width: 600px) {
+  body #projects .projects-grid { max-width: 360px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .scroll-reveal { opacity: 1; translate: none; }

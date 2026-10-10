@@ -66,7 +66,6 @@ export default function Home() {
                     <span className="project-category">{project.category}</span>
                     <h3 className="project-title">{project.title}</h3>
                     <p className="project-teaser">{project.highlights.slice(0, 2).join(" · ")}</p>
-                    <p className="preview-caption">Refreshed UI preview · tap image for original</p>
                     <details className="project-details">
                       <summary>About this project</summary>
                       <p className="project-description">{project.description}</p>
