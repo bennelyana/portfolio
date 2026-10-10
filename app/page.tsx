@@ -57,8 +57,8 @@ export default function Home() {
                   </div>
                   <div className="project-gallery" aria-label="Project screenshots">
                     {project.images.map((image, imageIndex) => (
-                      <a key={image} href={`/projects/${image}.png`} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} screenshot ${imageIndex + 1} (opens in a new tab)`}>
-                        <Image src={`/projects/${image}-preview.png`} alt={`${project.title} refreshed ${image.includes("login") ? "login and registration" : "application screen"} preview`} fill sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />
+                      <a key={image} href={`/projects/${image}-redesign.png`} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} UI redesign ${imageIndex + 1} (opens in a new tab)`}>
+                        <Image src={`/projects/${image}-redesign.png`} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"} UI redesign concept`} fill sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />
                       </a>
                     ))}
                   </div>
