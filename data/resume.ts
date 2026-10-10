@@ -5,6 +5,8 @@ export const technologies = [
   ["Microsoft Office", "/logos/microsoftoffice.svg"], ["Zendesk", "/logos/zendesk.svg"], ["Dixa", "/logos/dixa.jpeg"],
   ["Asana", "/logos/asana.svg"], ["Calendly", "/logos/calendly.svg"],
   ["HubSpot", "/logos/hubspot.svg"], ["Salesforce", "/logos/salesforce.svg"], ["Zoho CRM", "/logos/zoho-crm.svg"],
+  ["Slack", "/logos/slack.svg"], ["Trello", "/logos/trello.svg"], ["Notion", "/logos/notion.svg"],
+  ["Zoom", "/logos/zoom.svg"], ["ClickUp", "/logos/clickup.svg"], ["GitHub", "/logos/github.svg"],
 ];
 
 export const technicalSkills = [
@@ -12,15 +14,6 @@ export const technicalSkills = [
   { title: "IT & security", skills: "Network security, cybersecurity, cloud computing, IT service management, troubleshooting, information security, and CAPTCHA integration." },
   { title: "Data & management", skills: "Databases, data entry, data management, and software documentation." },
   { title: "Digital & administrative support", skills: "Social media marketing, CRM, appointment scheduling, email management, and administrative support." },
-];
-
-export const virtualAssistantTools = [
-  { title: "CRM & client management", tools: "HubSpot, Salesforce & Zoho CRM", description: "Keep contact records organized, track leads and customer interactions, update sales pipelines, and schedule follow-ups." },
-  { title: "Email & calendar", tools: "Google Workspace & Calendly", description: "Organize inboxes, manage calendars, coordinate appointments, and keep track of meeting schedules." },
-  { title: "Documents & data", tools: "Google Workspace & Microsoft Office", description: "Prepare documents and presentations, maintain spreadsheets, organize shared files, and keep records up to date." },
-  { title: "Tasks & projects", tools: "Asana", description: "Track tasks, set priorities and deadlines, follow up on action items, and keep project updates organized." },
-  { title: "Customer support", tools: "Zendesk & Dixa", description: "Manage customer inquiries, organize support tickets, document conversations, and follow up on unresolved requests." },
-  { title: "Content & design", tools: "Canva", description: "Create social media graphics, presentation slides, and clear visual materials for everyday business communication." },
 ];
 
 export const experience = [

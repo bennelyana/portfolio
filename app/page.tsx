@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { projects, certificates } from "../data/showcase";
-import { technologies, technicalSkills, virtualAssistantTools, experience } from "../data/resume";
+import { technologies, technicalSkills, experience } from "../data/resume";
 import Navbar from "../components/navbar";
 import ContactForm from "../components/contact-form";
 import ScrollReveal from "../components/scroll-reveal";
@@ -126,19 +126,7 @@ export default function Home() {
             <div className="technical-skills-grid">
               {technicalSkills.map((group) => <article className="technical-skill" key={group.title}><h3>{group.title}</h3><p>{group.skills}</p></article>)}
             </div>
-            <div className="va-tools">
-              <h3 className="va-tools-title">Virtual Assistant Tools</h3>
-              <p className="section-description">Practical tools for keeping communication, schedules, records, and day-to-day business tasks organized.</p>
-              <div className="technical-skills-grid">
-                {virtualAssistantTools.map((group) => (
-                  <article className="technical-skill" key={group.title}>
-                    <h4>{group.title}</h4>
-                    <p className="va-tool-names">{group.tools}</p>
-                    <p>{group.description}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
+
           </div>
         </section>
 
