@@ -152,10 +152,6 @@ export default function Home() {
                   <a className="credential-preview" href="https://www.credly.com/users/mary-iana-bennel-buisan" target="_blank" rel="noopener noreferrer" aria-label={`View Credly profile for ${certificate.title} (opens in a new tab)`}>
                     <Image src={certificate.image} alt={`${certificate.title} certificate awarded to Mary Iana Bennel Balais Buisan`} width={1651} height={1275} sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" className="credential-image" />
                   </a>
-                  <div className="credential-content">
-                    <h3>{certificate.title}</h3>
-                    <a className="project-link" href="https://www.credly.com/users/mary-iana-bennel-buisan" target="_blank" rel="noopener noreferrer">View on Credly<span className="sr-only"> (opens in a new tab)</span></a>
-                  </div>
                 </article>
               ))}
             </div>
