@@ -4,6 +4,7 @@ export const technologies = [
   ["Canva", "/logos/canva.svg"], ["Java", "/logos/java.svg"], ["Google Workspace", "/logos/google-workspace.svg"],
   ["Microsoft Office", "/logos/microsoftoffice.svg"], ["Zendesk", "/logos/zendesk.svg"], ["Dixa", "/logos/dixa.jpeg"],
   ["Asana", "/logos/asana.svg"], ["Calendly", "/logos/calendly.svg"],
+  ["HubSpot", "/logos/hubspot.svg"], ["Salesforce", "/logos/salesforce.svg"], ["Zoho CRM", "/logos/zoho-crm.svg"],
 ];
 
 export const technicalSkills = [
@@ -14,6 +15,7 @@ export const technicalSkills = [
 ];
 
 export const virtualAssistantTools = [
+  { title: "CRM & client management", tools: "HubSpot, Salesforce & Zoho CRM", description: "Keep contact records organized, track leads and customer interactions, update sales pipelines, and schedule follow-ups." },
   { title: "Email & calendar", tools: "Google Workspace & Calendly", description: "Organize inboxes, manage calendars, coordinate appointments, and keep track of meeting schedules." },
   { title: "Documents & data", tools: "Google Workspace & Microsoft Office", description: "Prepare documents and presentations, maintain spreadsheets, organize shared files, and keep records up to date." },
   { title: "Tasks & projects", tools: "Asana", description: "Track tasks, set priorities and deadlines, follow up on action items, and keep project updates organized." },
