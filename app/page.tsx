@@ -58,7 +58,7 @@ export default function Home() {
                   <div className="project-gallery" aria-label="Project screenshots">
                     {project.images.map((image, imageIndex) => {
                       const original = image.startsWith("sari-sari-") || image === "hij-car-rentals";
-                      const src = `/projects/${image}${original ? "" : "-redesign"}.png`;
+                      const src = `/projects/${image}${original ? "" : "-screen"}.png`;
                       return (
                         <a key={image} href={src} target="_blank" rel="noopener noreferrer" className="project-screenshot" aria-label={`View ${project.title} ${original ? "screenshot" : "UI redesign"} ${imageIndex + 1} (opens in a new tab)`}>
                           <Image src={src} alt={`${project.title} ${image.includes("login") ? "login and registration" : "application screen"}${original ? " screenshot" : " UI redesign concept"}`} fill sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" />

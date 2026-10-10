@@ -380,7 +380,7 @@ body .contact-text { max-width: 720px; }
 .contact-form-panel { max-width: 700px; }
 .contact-socials { display: flex; justify-content: center; gap: 12px; margin-top: 14px; }
 .contact-socials .contact-github { margin: 0; }
-.scroll-reveal { opacity: 0; translate: 0 18px; transition: opacity .65s ease, translate .65s ease; }
+.scroll-reveal { opacity: 0; translate: 0 24px; transition: opacity .65s ease var(--reveal-delay, 0ms), translate .65s ease var(--reveal-delay, 0ms); }
 .scroll-reveal.is-visible { opacity: 1; translate: 0 0; }
 body .project-screenshot img { transition: transform .5s ease; }
 body .project-screenshot:hover img { transform: scale(1.025); }
@@ -403,4 +403,31 @@ body #projects .project-title { font-size: 19px; }
   html { scroll-behavior: auto; }
   .scroll-reveal { opacity: 1; translate: none; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* Flexible navigation and comfortable layouts on phones and tablets. */
+body .section-inner, body .hero-inner, body .contact-form-panel { min-width: 0; }
+body .project-title, body .career-copy, body .technology-name { overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  body .navbar { height: auto; }
+  body .navbar-inner { flex-wrap: wrap; gap: 8px; padding: 12px 20px; }
+  body .portfolio-nav { display: flex; flex-wrap: wrap; width: 100%; gap: 6px 10px; align-items: center; }
+  body .portfolio-nav a { display: flex; align-items: center; min-height: 44px; padding: 4px 6px; font-size: 12px; }
+  body .portfolio-nav .theme-toggle { margin-left: auto; }
+  body .section { scroll-margin-top: 160px; }
+}
+@media (max-width: 600px) {
+  body .navbar-inner { padding-inline: 16px !important; }
+  body .section, body .process, body #projects { padding-inline: 16px; }
+  body .hero { padding-inline: 16px; }
+  body .portfolio-nav a { font-size: 11px; }
+  body .whyme-grid { grid-template-columns: 1fr; }
+  body .technology-grid { gap: 18px 8px; padding: 18px 10px; }
+  body #projects .projects-grid { max-width: 420px; width: 100%; }
+  body #projects .project-gallery { padding: 18px 12px; }
+  body #projects .project-screenshot { height: clamp(125px, 40vw, 165px); }
+  body #projects .project-kind-mobile .project-screenshot { height: 150px; flex-basis: 78px; }
+  body .contact-input { min-width: 0; width: 100%; font-size: 16px; }
+  .statement { font-size: clamp(25px, 7.2vw, 43px); }
+  .inline-symbol { width: 32px; flex-shrink: 0; }
 }
